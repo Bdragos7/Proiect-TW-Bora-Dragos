@@ -1,0 +1,14 @@
+ul.meniu li{
+    font-size: 0.8em;
+}
+
+/* ul.meniu li>div.icon.fa{
+    color: blueviolet;
+} */
+#home{
+    display: none;
+}
+
+div.scroll{
+    overflow-x: scroll;
+ }

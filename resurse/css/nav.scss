@@ -1,0 +1,136 @@
+body{
+    --inaltime-meniu:25px;
+    --latime-buton:100px;
+    --latime-bord-meniu:1px;
+    --culoare-meniu:#9CD1F7;
+    --culoare-meniu-selectat:#e1c0fc;
+  }
+  
+ul.meniu{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li{
+        a{
+            display: block;
+            height: 100%;
+        }
+        >div{
+            background-color: var(--culoare-meniu);
+        }
+        &:hover{
+            ul{
+                animation-name: animation_submeniu;
+                animation-duration: 0.4s;
+                animation-timing-function: linear; 
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                
+            }
+            
+        }
+        div{
+            
+            >a{
+                text-decoration: none;
+                transition: 0.4s;
+                transform-origin: 0%;
+                position: relative;
+                display: block;
+                background-color: var(--culoare-meniu);
+                color:black;
+            }
+
+            >a:after{
+                content: "";
+                position: absolute;
+                background: linear-gradient(to right, #9CD1F7, #94ffaf);
+                transform-origin: 0%;
+                width: 0%;
+                right: 0;
+                transition: 0.4s;
+                height: 4px;
+                bottom: -1px;
+            }
+            >a:hover:after{
+                width: 100%;
+   
+            }
+          
+        }
+        
+    }
+    > li{
+      
+        height: var(--inaltime-meniu);
+        overflow: hidden;
+        line-height:var(--inaltime-meniu);
+        vertical-align: middle;
+        border: var(--latime-bord-meniu) solid black;
+        width: var(--latime-buton);
+        text-align: center;
+        font-weight: bold;
+        &:hover{
+            overflow: visible;
+        
+        }
+   
+    }
+    ul{
+        list-style-type: none;
+        z-index: 10px;
+        position: relative;
+        left: -1px;
+        padding: 0;
+        margin: 0;
+        transform: scaleY(0);
+        transform-origin: 50%;
+        li{
+            height: var(--inaltime-meniu);
+            border: var(--latime-mord-meniu) solid black;
+            width: var(--latime-buton);
+            a{
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+                font-weight: bold;
+                transition: all 1s linear;
+                background-color: var(--culoare-meniu);
+                text-decoration: none;
+                &:hover{
+                    background-color :var(--culoare-meniu-selectat);
+                    color:#94ffaf;
+                }
+            }
+        }
+    }
+
+    
+
+}
+
+  
+  
+@keyframes animation_submeniu{
+    50%{
+      transform: scaleY(0.5) ;
+    }
+    100%{
+      transform: scaleY(1) ;
+     
+    }
+}
+  
+nav{
+    height: var(--inaltime-meniu);
+    background-color: var(--culoare-meniu);
+    display: flex;
+}
+  
+#hamburger, #ch-menu{
+        display: none;
+}
+  
+  
+  

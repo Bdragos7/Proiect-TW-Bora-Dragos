@@ -1,0 +1,107 @@
+
+
+#grid-pagina{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "z-ceva z-ceva z-ceva z-ceva"
+                        "z-linkuri z-fig1 z-fig1 z-informatii-utile"
+                        "z-tabel z-tabel z-how-to z-how-to"
+                        "z-about-us z-about-us z-how-to z-how-to"
+                        "z-tickets z-tickets z-tickets z-tickets";
+    
+}
+#grid-pagina > *{
+
+    border: 2px solid var(--culoare-meniu);
+   
+}
+
+#about-us{
+    grid-area: z-about-us;
+}
+
+#how-to{
+    grid-area: z-how-to;
+}
+
+#fig1{
+    grid-area: z-fig1;
+}
+
+#informatii-utile{
+    grid-area: z-informatii-utile;
+}
+
+#linkuri{
+    grid-area: z-linkuri;
+    align-items: left;
+}
+
+#tickets{
+    grid-area: z-tickets;
+}
+
+#tabel{
+    grid-area: z-tabel;
+}
+
+#ceva{
+    grid-area: z-ceva;
+}
+
+
+
+h1{
+    font-family: 'Tangerine', serif;
+    text-align: center;
+    text-shadow: 4px 4px 4px #aaa;
+    font-size: 4.5em;
+    vertical-align: middle;
+}
+
+
+
+table {
+    width: 100%;
+    display: flexbox;
+    border: 5px solid ;
+    border-style: inset;
+    text-align: center;
+}
+
+td, th {
+    padding: 5px;
+    
+}
+
+thead tr:nth-child(odd) th{
+    border: 2px solid #e1c0fc;
+
+ }
+tr:nth-child(even) td{
+    border: 2px solid #e1c0fc;
+}
+
+
+ tr:nth-child(odd) td{
+    border: 2px solid blue;
+}
+
+th, tr{
+    transition: outline 0.5s linear;
+    outline-width: 5px;
+    outline: hidden;
+    outline-color: rgb(0.7);
+}
+
+tbody tr:hover{
+    outline:solid;
+    
+    
+}
+thead tr:hover{
+    outline:solid;
+}
+
+
+

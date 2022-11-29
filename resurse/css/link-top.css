@@ -1,0 +1,34 @@
+#link-top{
+    
+    position: fixed;
+    bottom: 0.3em;
+    left: 0.3em;
+    height: 2em;
+    width: 2rem;
+    opacity: 0.5;
+    border-radius: 50%;
+    background-color: white;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    box-shadow: rgba(0, 0, 0, 1) 0px 0px 7px 4px;
+    
+}
+
+#link-top div{
+
+    vertical-align: center;
+    color: gray;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+#link-top:hover{
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 1) 0px 0px 7px 4px;
+    background-color: rgb(212, 212, 212);
+    
+}

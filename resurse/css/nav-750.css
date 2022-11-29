@@ -1,0 +1,101 @@
+#hamburger{
+    display:block;
+    height:var(--inaltime-meniu);
+}
+ #hamburger img{
+    height: 100%;
+    width:auto;
+ }
+
+ nav{
+   position: relative;
+   display: block;
+ }
+
+ ul.meniu{
+    display:none;
+    animation-name:animatie-meniu;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+    width: 100%;
+    opacity: 0;
+ }
+
+ #ch-menu:checked~ul.meniu{
+    display:block;
+ }
+
+ ul.meniu li{
+   width: 100% !important;   
+ }
+
+ 
+ ul.meniu ul{
+   width: 100%;
+} 
+
+
+ ul.meniu li div>a{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 1s linear;
+    background-color: var(--culoare-meniu);
+    text-decoration: none;
+    font-size: normal;
+   
+ } 
+
+ ul.meniu li div>a:hover{
+    background-color :var(--culoare-meniu-selectat) ;
+    color: #94ffaf ;
+ }
+ul.meniu li div>a:hover::after{
+   width: 0px;
+}
+
+ div.rentals{
+   color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 1s linear;
+    background-color: var(--culoare-meniu);
+    text-decoration: none;
+ }
+
+ div.rentals:hover{
+   background-color :var(--culoare-meniu-selectat) ;
+   color: #94ffaf;
+ }
+ #home{
+   display: none;
+ }
+
+
+/* 
+ ul#submeniu>li a{
+    color: rgb(0, 0, 0) !important;
+    
+    font-weight: bold;
+    transition: all 1s linear ;
+    background-color: var(--culoare-meniu);
+    text-decoration: none;
+ }
+
+
+ ul#submeniu>li a:hover {
+    background-color :var(--culoare-meniu-selectat) !important;
+    color: blue !important;
+ } */
+
+ @keyframes animatie-meniu{
+    100%{
+        transform: rotate(0);
+        opacity: 1;
+    }  
+
+ }

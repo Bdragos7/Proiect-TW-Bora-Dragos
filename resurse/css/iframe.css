@@ -1,0 +1,62 @@
+.flexbox {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* centrare elemente flexbox */
+    justify-content: left;
+    /* spatiu intre elementele din flexbox */
+    width: 300px;
+    flex-direction: row;
+
+}
+
+
+.iframe{
+    border-style: inset;
+    border: 5px;
+    
+}
+
+
+.rectangle_link{
+
+    height: 60px;
+    width: 150px;
+    background-color: white;
+    box-shadow: 7px 2px 5px #9CD1F7 inset;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    color: rgb(9,56,61);
+    text-align: center;
+    
+}
+.rectangle_link a{
+    text-decoration: none;
+    
+}
+
+.rectangle_link:hover {
+
+    transition: all 0.5s linear;
+    background-color: #9CD1F7;
+    color: rgb(188, 195, 195);
+    text-decoration: none;
+}
+
+
+
+.ylink:hover {
+
+    transition: all 1s linear;
+    color: white;
+
+}
+
+
+
+.ylink {
+
+    color: #9CD1F7;
+
+}
