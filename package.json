@@ -2,13 +2,13 @@
   "dependencies": {
     "ejs": "^3.1.8",
     "expres": "^0.0.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sharp": "^0.31.2"
   },
   "name": "air-travel",
   "version": "1.0.0",
   "description": "site pentru booking",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

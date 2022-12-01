@@ -30,24 +30,30 @@
                         </section>
                     </div>
                     <!--Et1.7-->
-                    <div id="tickets">
-                        <dl>
-                            <dt><!--Et1.10.a--><b>Economy Class</b></dt>
-                            <dd>This is the <!--Et1.10.d--><em>cheapest fare class</em> on scheduled airlines. Although paying less for the plane ticket, passengers can expect to find the same in-flight comfort as passengers in other classes: adjustable seats, legroom, table on board, etc.
-                                The meal on board is adjusted according to the duration and period of the flight: frugal breakfast, lunch, snack, dinner. Passengers are served drinks (coffee, tea, etc.) and can request various devices designed to make their flight more pleasant: head pillows, headphones, tissues, etc.
-                                During long flights, airline companies often provide entertainment on board: movies, music, various video programs.</dd>
-                            <dt><!--Et1.10.a--><b>Business class</b></dt>
-                            <dd>Business class is the <!--Et1.10.d--><em>best solution</em> for passengers who want more comfort during flights and who are willing to pay more for additional services. It is offered by most scheduled airlines and, among other things, means:<ul>
-                                <li>comfortable cabins</li>
-                                <li>ergonomic seats with more legroom</li>
-                            </ul></dd>
-                            <dt><!--Et1.10.a--><b>First class</b></dt>
-                            <dd>This is the <!--Et1.10.d--><em>highest fare class</em>, passengers traveling in First Class benefit from exclusive services and increased comfort during flights.
-                                The chairs are extremely comfortable, equipped with various functions, can be turned into beds, and the tables are available on request and consist of dishes prepared by famous chefs. In comparison, economy class meals are frugal and standardized.
-                                At the airport, First Class passengers have access to modern lounges where they can relax away from the hustle and bustle of the terminal.</dd>
-                            
-                        </dl>
-                    </div>
+                    <section id="galerie_statica">
+                        <h2>Galery</h2>
+                        <div id="grid-galerie">
+
+                            <% for (let imag of locals.imagini) { 
+                                var d = new Date();
+                                var v_luni = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie","august", "septembrie","octombrie","noiembrie","decembrie"]
+                                var luna_r = v_luni[d.getMonth()]
+                                
+                                if (imag.luni && imag.luni.includes(luna_r)) { %>
+                                    <figure>
+                                        <picture>
+                                            <source srcset="<%-imag.cale_fisier_mediu %>" media="(max-width:1200px)"/>
+                                            <source srcset="<%-imag.cale_fisier_mic %>" media="(max-width:750px)"/>  
+                                            <img src="<%- imag.cale_fisier %>" alt="<%- imag.alt %>">
+                                        </picture>
+                                        <figcaption><%- imag.text_descriere %></figcaption>
+                                    </figure>
+                                <% } %>
+                            <% } %>
+                        </div>
+
+                    
+                    </section>
                     <!--Et1.11.c-->
                     <div id="how-to">
                         <h2>How to section</h2>
@@ -139,13 +145,17 @@
                         </details>
                     </div>
     
-                    <div id="linkuri">
-                        <!--Et1.11.a-->
-                        <a href="https://fmi.unibuc.ro/" target="_blank">Facultatea de Matematica si Informatica</a>
-                        <!--Et1.11.b-->
-                        <a href="#">Back to Home</a>
-                        <!--Et1.11.d-->
-                        <a href="./resurse/imagini/images.jpg" download="Image">Download</a>
+                    <div id="sectiune-galerie-animata">
+                        <% for (let imag of locals.imagini) { 
+                             %>
+                                <figure>
+                                     <picture>
+                                         <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1200px)" />
+                                         <img src="<%- imag.fisier %>" alt="imagine">
+                                     </picture>
+                                     <figcaption><%- imag.descriere %></figcaption>
+                                </figure>
+                        <% }  %>
                     </div>
     
                     <div id="tabel">
@@ -212,7 +222,22 @@
                     </div>
     
                     <div id="ceva">
-                        <p>Emblema pt site</p>
+                        <dl>
+                            <dt><!--Et1.10.a--><b>Economy Class</b></dt>
+                            <dd>This is the <!--Et1.10.d--><em>cheapest fare class</em> on scheduled airlines. Although paying less for the plane ticket, passengers can expect to find the same in-flight comfort as passengers in other classes: adjustable seats, legroom, table on board, etc.
+                                The meal on board is adjusted according to the duration and period of the flight: frugal breakfast, lunch, snack, dinner. Passengers are served drinks (coffee, tea, etc.) and can request various devices designed to make their flight more pleasant: head pillows, headphones, tissues, etc.
+                                During long flights, airline companies often provide entertainment on board: movies, music, various video programs.</dd>
+                            <dt><!--Et1.10.a--><b>Business class</b></dt>
+                            <dd>Business class is the <!--Et1.10.d--><em>best solution</em> for passengers who want more comfort during flights and who are willing to pay more for additional services. It is offered by most scheduled airlines and, among other things, means:<ul>
+                                <li>comfortable cabins</li>
+                                <li>ergonomic seats with more legroom</li>
+                            </ul></dd>
+                            <dt><!--Et1.10.a--><b>First class</b></dt>
+                            <dd>This is the <!--Et1.10.d--><em>highest fare class</em>, passengers traveling in First Class benefit from exclusive services and increased comfort during flights.
+                                The chairs are extremely comfortable, equipped with various functions, can be turned into beds, and the tables are available on request and consist of dishes prepared by famous chefs. In comparison, economy class meals are frugal and standardized.
+                                At the airport, First Class passengers have access to modern lounges where they can relax away from the hustle and bustle of the terminal.</dd>
+                            
+                        </dl>
     
                     </div>
                 </div>

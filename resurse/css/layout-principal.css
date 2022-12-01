@@ -4,10 +4,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "z-ceva z-ceva z-ceva z-ceva"
-                        "z-linkuri z-fig1 z-fig1 z-informatii-utile"
+                        "z-fig1 z-sectiune-galerie-animata z-sectiune-galerie-animata z-informatii-utile"
                         "z-tabel z-tabel z-how-to z-how-to"
                         "z-about-us z-about-us z-how-to z-how-to"
-                        "z-tickets z-tickets z-tickets z-tickets";
+                        "z-galerie_statica z-galerie_statica z-galerie_statica z-galerie_statica";
     
 }
 #grid-pagina > *{
@@ -32,13 +32,13 @@
     grid-area: z-informatii-utile;
 }
 
-#linkuri{
-    grid-area: z-linkuri;
+#sectiune-galerie-animata{
+    grid-area: z-sectiune-galerie-animata;
     align-items: left;
 }
 
-#tickets{
-    grid-area: z-tickets;
+#galerie_statica{
+    grid-area: z-galerie_statica;
 }
 
 #tabel{

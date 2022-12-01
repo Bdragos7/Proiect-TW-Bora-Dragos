@@ -2,36 +2,97 @@
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","iunie"]
+			"cale_fisier":"a330.png",
+			"text_descriere":"Avion A330",
+			"titlu":"A330",
+			"alt":"A330",
+			"luni":["martie","februarie","iunie","decembrie"]
 		},
 		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"luni":["ianuarie","februarie","iunie"]
+			"cale_fisier":"avion_ciudat.png",
+			"text_descriere":"Avion ciudat",
+			"titlu":"Ciudat",
+			"alt":"Un avion ciudat",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
 			
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["ianuarie","februarie","iunie","martie"]
+			"cale_fisier":"avion_italia.png",
+			"text_descriere":"Avioane Italia",
+			"titlu":"Italia",
+			"alt":"Avion Italia",
+			"luni":["ianuarie","februarie","iunie","martie","decembrie"]
 		},
 		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară"
+			"cale_fisier":"avion_luftansa.png",
+			"text_descriere":"Avion Luftansa",
+			"titlu":"Luftansa",
+			"alt":"Avion Luftansa",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
+			"cale_fisier":"avion_nato.png",
+			"text_descriere":"Avion Nato",
+			"titlu":"Nato",
+			"alt":"Avion Nato",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"cale_fisier":"avion_pictat.png",
+			"text_descriere":"Avion pictat",
+			"titlu":"Aviont pictat",
+			"alt":"Avion pictat",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"cale_fisier":"avion_portugalia.png",
+			"text_descriere":"Avion Portugalia",
+			"titlu":"Portugalia",
+			"alt":"Avion Portugalia",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
+		},
+		{
+			"cale_fisier":"avion_qatar.png",
+			"text_descriere":"Avion Qatar",
+			"titlu":"Qatar",
+			"alt":"AVion Qatar",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
+		},
+		{
+			"cale_fisier":"avion_rata.png",
+			"text_descriere":"Avion in forma de rata",
+			"titlu":"Rata",
+			"alt":"Avion rata",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
+		},
+		{
+			"cale_fisier":"avion_romania.png",
+			"text_descriere":"Avion Romania",
+			"titlu":"Romania",
+			"alt":"Avion Romania",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
+		},
+		{
+			"cale_fisier":"avion_sf.png",
+			"text_descriere":"Avion SF",
+			"titlu":"SF",
+			"alt":"Avion SF",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
+		},
+		{
+			"cale_fisier":"avion_tarom.png",
+			"text_descriere":"Avion Tarom",
+			"titlu":"Tarom",
+			"alt":"Avion Tarom",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
+		},
+		{
+			"cale_fisier":"mos_craciun.png",
+			"text_descriere":"Mos Craciun",
+			"titlu":"Mos Craciun",
+			"alt":"Mos Craciun",
+			"luni":["ianuarie","februarie","iunie","decembrie"]
 		}
+
 	]
 }
