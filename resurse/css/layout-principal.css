@@ -1,10 +1,37 @@
+body {
+    --inaltime-meniu:25px;
+    --latime-buton:100px;
+    --latime-bord-meniu:1px;
+    --culoare-meniu:#9CD1F7;
+    --culoare-meniu-selectat:#e1c0fc;
+    --culoare-gradient:#94ffaf;
+    --culoare-bck:white;
+    --cl-text:black;
+  }
+body.dark{
+    --culoare-bck:black;
+    --cl-text:white;
+    text-shadow:0px 0px 2px black,0px 0px 1px black,0px 0px 1px black;
+
+}
+body.craciun{
+    --culoare-bck:red;
+    --cl-text:green;
+    text-shadow:0px 0px 2px greenyellow,0px 0px 1px greenyellow,0px 0px 1px greenyellow;
+
+}
+body{
+    background-color: var(--culoare-bck);
+    color: var(--cl-text);
+}
+
 
 
 #grid-pagina{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "z-ceva z-ceva z-ceva z-ceva"
-                        "z-fig1 z-sectiune-galerie-animata z-sectiune-galerie-animata z-informatii-utile"
+                        "z-fig1 z-galerie-animata z-galerie-animata z-informatii-utile"
                         "z-tabel z-tabel z-how-to z-how-to"
                         "z-about-us z-about-us z-how-to z-how-to"
                         "z-galerie_statica z-galerie_statica z-galerie_statica z-galerie_statica";
@@ -32,8 +59,8 @@
     grid-area: z-informatii-utile;
 }
 
-#sectiune-galerie-animata{
-    grid-area: z-sectiune-galerie-animata;
+#galerie-animata{
+    grid-area: z-galerie-animata;
     align-items: left;
 }
 
@@ -58,50 +85,100 @@ h1{
     font-size: 4.5em;
     vertical-align: middle;
 }
-
-
-
-table {
-    width: 100%;
-    display: flexbox;
-    border: 5px solid ;
-    border-style: inset;
-    text-align: center;
+h2{
+    font-family: 'Tangerine', serif;
 }
 
-td, th {
-    padding: 5px;
+/* REFLEXIE */
+#text-reflectat{
+	position:absolute;
+    font-size:30px;
+	line-height:50px;
+	font-weight: bold;
+    margin-bottom: 20px;
+    top:43px;
+    left: 160px;
+    transform: rotate(-150deg) rotateX(180deg);
+
     
 }
 
-thead tr:nth-child(odd) th{
-    border: 2px solid #e1c0fc;
-
- }
-tr:nth-child(even) td{
-    border: 2px solid #e1c0fc;
-}
-
-
- tr:nth-child(odd) td{
-    border: 2px solid blue;
-}
-
-th, tr{
-    transition: outline 0.5s linear;
-    outline-width: 5px;
-    outline: hidden;
-    outline-color: rgb(0.7);
-}
-
-tbody tr:hover{
-    outline:solid;
-    
+#text{
+	font-size:30px;
+	line-height:50px;
+	font-weight: bold;
+    position:relative;
+    transform: scaleX(0.6) rotate(-15deg);
+    margin-left: 0;
+    margin-bottom: 40px;
     
 }
-thead tr:hover{
-    outline:solid;
+/* HR */
+hr::after{
+    content: ' ';
+    height: 50px;
+    background: url('/resurse/imagini/rsz_avion-hr.png') no-repeat center;
+    position: relative;
+    display: block;
+    margin-top: -13px;
+
+    
 }
+
+hr{
+    background-image: radial-gradient(transparent,transparent 45%,var(--culoare-meniu), transparent );
+    height: 20px;
+    background-size: 20px 20px;
+    overflow: visible;
+    
+
+}
+
+
+/* input[type="checkbox"]{
+    display: none;
+}
+label{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border:2px solid gray;
+    border-radius:30px;
+    padding:10px;
+    cursor:pointer;
+    position: fixed;
+}
+
+.fa-sun{
+    color: orange;
+    font-size: 25px;
+    text-shadow: 0px 0px 20px orange;
+    transform: translateX(25px);
+    transition: 0.3s;
+}
+.fa-moon{
+    color: black;
+    font-size: 25px;
+    text-shadow: 0px 0px 20px white;
+    transform: translateX(0px);
+    transition: 0.3s;
+    opacity: 0;
+}
+
+
+#buton-tema:checked ~ label > .fa-sun{
+    opacity: 0;
+    transform: translateX(0px);
+}
+#buton-tema:checked ~ label > .fa-moon{
+    opacity: 1;
+    transform: translateX(-25px);
+}
+
+#buton-tema:checked ~ .tema{
+    color: white !important;
+    background: var(--culoare-bck-dark)!important;
+} */
 
 
 

@@ -6,13 +6,16 @@
         <meta name="key-words" content="Agentie turistica, vacanta, sejur">
    
         <title>Air Travel</title>
+  
+        
         <%-include("../fragmente/head.ejs")%>
     </head>
     
     <body>
+        
 
         <%- include("../fragmente/header.ejs") %>        
-        <main>
+        <main >
             <div id="grid-pagina">
                 <!--Et1.6-->
                     <div>    
@@ -21,7 +24,10 @@
                             <h2><i>About us</i></h2>
                             <section>
                                 <article>
-                                    <p><b>Lorem ipsum</b></p>
+                                    <div id="text">
+                                    <p>Our History</p>
+                                        <div id="text-reflectat">Our History</div>
+                                    </div>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     <br>Donec ultrices tincidunt arcu non sodales neque sodales ut etiam.
                                     Eget arcu dictum varius duis at consectetur lorem donec.
@@ -30,16 +36,20 @@
                         </section>
                     </div>
                     <!--Et1.7-->
+                    
                     <section id="galerie_statica">
+                        <hr>
                         <h2>Galery</h2>
-                        <div id="grid-galerie">
+                         
 
+                        <div id="grid-galerie">
+                            <%  var lungime =1;%>
                             <% for (let imag of locals.imagini) { 
                                 var d = new Date();
                                 var v_luni = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie","august", "septembrie","octombrie","noiembrie","decembrie"]
                                 var luna_r = v_luni[d.getMonth()]
                                 
-                                if (imag.luni && imag.luni.includes(luna_r)) { %>
+                                if (imag.luni && imag.luni.includes(luna_r)  && lungime<=12) { %>
                                     <figure>
                                         <picture>
                                             <source srcset="<%-imag.cale_fisier_mediu %>" media="(max-width:1200px)"/>
@@ -48,7 +58,13 @@
                                         </picture>
                                         <figcaption><%- imag.text_descriere %></figcaption>
                                     </figure>
-                                <% } %>
+                                   
+
+
+                                
+                                <% lungime ++;}%>
+                             
+                                
                             <% } %>
                         </div>
 
@@ -57,7 +73,7 @@
                     <!--Et1.11.c-->
                     <div id="how-to">
                         <h2>How to section</h2>
-                        <!-- <div class="iframe-tabs">
+                            <div class="iframe-tabs">
                             <a class="button" target="ifr-vid" href="https://www.youtube.com/embed/qDZ1DpKvRe0" role="button">Booking flights</a>
                             <a class="button" target="ifr-vid"  href="https://www.youtube.com/embed/YnjGt8YVJxU" role="button">Booking hotels</a>
                         
@@ -94,16 +110,17 @@
                     
                     <!--Et1.8-->
                     <div id="fig1">
-                        <figure>
-                            <picture>
-                                    <source srcset="resurse/imagini/vietnam-rez-mica1.jpg" media="(max-width: 700px)" />
-                                    <source srcset="resurse/imagini/vietnam-rez-medie.jpg" media="(max-width: 1200px)" />
-                                    <img src="./resurse/imagini/vietnam-rez-mare.jpg" alt="peisaj exotic" />
-                                    
-                            </picture>
-                            <figcaption style="text-align:center">Vietnam</figcaption>
-                        </figure>
-    
+                        
+                        <video width="320" height="240" controls poster="/resurse/imagini/poster.jpg" preload="auto" autoplay loop muted>
+                            <source src="resurse/video/LX_00001.mp4" type="video/mp4">
+                            <source src="resurse/video/LX_00001.ogg" type="video/ogg">
+                            <source src="resurse/video/LX_00001.ogv" type="video/ogv">
+                            <track default kind="captions" src="/resurse/video/tracks/captions_ro.vtt" srclang="ro" label="romana">
+                            <track kind="captions" src="/resurse/video/tracks/captions_en.vtt" srclang="en" label="engleza">
+
+                             
+                         </video>           
+   
                     </div>
     
                     <!--Et1.12-->
@@ -143,21 +160,33 @@
                                 <li>Make mobile phone calls</li>
                             </ol>
                         </details>
+                   
                     </div>
-    
-                    <div id="sectiune-galerie-animata">
-                        <% for (let imag of locals.imagini) { 
-                             %>
-                                <figure>
-                                     <picture>
-                                         <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1200px)" />
-                                         <img src="<%- imag.fisier %>" alt="imagine">
-                                     </picture>
-                                     <figcaption><%- imag.descriere %></figcaption>
-                                </figure>
-                        <% }  %>
+             
+                    <div id="galerie-animata" class="galerie-a">
+                        <section id="sectiune-galerie-animata">
+                            <a>Galerie animata</a>
+                            <div id="galerie_exemplu3" class="galerie">
+                                <div>
+                                    <figure>
+                                        <img src="resurse/imagini/galerie/a330.png" alt="avion hr" />
+                                        <figcaption>avion a330</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="resurse/imagini/galerie/avion_italia.png" alt="italia" />
+                                        <figcaption>Avion Italia</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="resurse/imagini/galerie/avion_sf.png" alt="avion sf" />
+                                        <figcaption>Avion sf</figcaption>
+                                    </figure>
+                            
+                                </div>
+                            </div>
+                        </section>
                     </div>
-    
+                              
+                    
                     <div id="tabel">
                         <div class="scroll">
                             <table>
@@ -219,9 +248,56 @@
                             
                             </table>
                         </div>
+
+
+
+                        <article class="revista" id="idr-irdrevista">
+                            <h2 ><b><i>Titlu revista</i></b></h2>    
+                            <div id="div-reviste"><table>
+                                <thead>
+                                
+                                    <tr>
+                                        <th>revista</th>
+                                        <th>tematici</th>
+                                        <th id="pret-revista">Pret</th>
+
+                                    </tr>
+                                  
+                                </thead>
+                                <tr>
+                                    <td>ceva</td>
+                                    <td>ceva</td>
+                                    <td>ceva</td>    
+                                </tr>
+                            </table></div>
+                        
+                        
+                        
+                        </article>
                     </div>
     
                     <div id="ceva">
+                        <p>Ip<%- locals.ip %></p>
+
+                        <% if(!locals.utilizator) { %>
+                        <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+                            <p>
+                                <label>
+                                    Username: <input type="text" name="username" id="inp-username" value="" required pattern="[A-Za-z0-9]+">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Parola: <input id="parl" type="password" required  name="parola" value="">
+                                </label>
+                            </p>
+                            <p><input type="submit" value="Logare"></p>
+                        </form>
+                        <p><%- locals.eroareLogin %></p>
+                        <% } else {%>
+                        <%- locals.succesLogin %>
+                        <% }  %>
+
                         <dl>
                             <dt><!--Et1.10.a--><b>Economy Class</b></dt>
                             <dd>This is the <!--Et1.10.d--><em>cheapest fare class</em> on scheduled airlines. Although paying less for the plane ticket, passengers can expect to find the same in-flight comfort as passengers in other classes: adjustable seats, legroom, table on board, etc.
@@ -238,11 +314,12 @@
                                 At the airport, First Class passengers have access to modern lounges where they can relax away from the hustle and bustle of the terminal.</dd>
                             
                         </dl>
-    
+                     
                     </div>
+                    
                 </div>
                 
-           
+                <p id="end"></p>  
         </main>
 
         <%- include("../fragmente/footer.ejs") %> 

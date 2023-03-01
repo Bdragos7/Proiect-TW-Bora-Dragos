@@ -1,0 +1,15 @@
+Subprogramele, in termeni naturali reprezinta linii de cod ce se executa doar in momentul in care programatorul are nevoie.
+
+Ele pot fi predefinite cat si scrise de catre programator.
+
+Functiile predefinite apartin de librarii create de alti programatori special pentru a ne usura munca.
+
+
+Un subprogram este o secvență de instrucțiuni a căror execuție este invocată din una sau mai multe locații la distanță dintr-un program,
+cu așteptarea ca atunci când execuția subprogramului este completă, execuția să se reia la instrucțiunea după cea care a invocat subprogramul. 
+
+În limbajele de nivel înalt, subprogramele sunt numite și subrutine, proceduri și funcții.
+
+În limbajele orientate pe obiect, ele sunt de obicei numite metode sau constructori.
+
+În majoritatea limbajelor moderne de nivel înalt, subprogramele pot avea parametri, variabile locale și valori returnate.  

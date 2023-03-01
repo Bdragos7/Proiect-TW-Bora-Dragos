@@ -3,28 +3,62 @@
 
         <header>
             <!--Et1.5-->
-                <h1 > Air Travel</h1>
+                <p id="banner"></p>
+                   
+                <h1 > Air Travel</h1> 
+            
+                <p id="watermark"></p>
+
+                
+            <button id="tema"><i class="fa-solid fa-moon-over-sun"></i></button>
+            <button id="tema-cra"><i class="fa-solid fa-tree-christmas"></i></button>
+
+            
+                
             <nav>
     
                 <label id="hamburger" for="ch-menu">
                     <img src="resurse/imagini/Hamburger_icon_alb.png" alt="menu">
                 </label>
                 <input id="ch-menu" type="checkbox">
-                <!-- de corectat meniul -->
-                <ul class="meniu">
-                    <li><div><a id="icon" href="home"><i class="fa fa-fw fa-home"></i><span id="home">Home</span></a></div></li>
-                    <li><div><a href="register">Register</a></div></li>
-                    <li><div><a href="hitory">Our History</a></div></li>
-                    <li><div><a href="contact">Contact us</a></div></li>
-                    <li><div><a href="vacantions">Vacations</a></div></li>
-                    <li><div class="rentals">Rentals</div>
-                        <ul >
-                            <li><a href="cars">Cars</a></li>
-                            <li><a href="scooters">Scooters</a></li>
-                            <li><a href="uber">Uber</a></li>
-                            <li><a href="taxi">Taxi</a></li>
+ 
+
+                <ul class="meniu" id="meniut-print">
+                    <li><div><a id="icon" href="/index"><i class="fa fa-fw fa-home"></i><span id="home">Home</span></a></div></li>
+                    <li><div><a href="/inregistrare">Register</a></div></li>
+                    <li><div><a href="#about-us"><i class="fas fa-scroll fa-flip" style="--fa-flip-x: 1; --fa-flip-y: 0;" ></i>History</a></div></li>
+                    <li><div><a href="/contact"><i class="fa fa-phone" aria-hidden="true"></i>Contact us</a></div></li>
+                    <li><div><a href="#galerie_statica">Galery</a></div></li>
+                    <li><div class="rentals">Vacations</div>
+                        <ul id="submeniut-print">
+                            <li><a href="/produse">All fligths</a></li>
+                            <li><a href="/produse?tip=exotic">Exotic</a></li>
+                    
+                           
                         </ul>
+                    
                     </li>
+                    
+             
+                    <!-- <li><a href="/info-clienti">Customizare</a></li> -->
+                    <li><a href="/cos-virtual">Cos virtual</a></li>
+                    <% if(locals?.utilizator?.areDreptul?.(Drepturi.vizualizareUtilizatori)) { %>
+                        <li><div>Administrare</div>
+                            <ul>
+                                <li><a href="/useri">Useri</a></li>
+                                <li><a href="/grafice">Grafice</a></li>
+                                <li><a href="/comenzi">Comenzi</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+                    <% if(locals.utilizator) { %>
+                        <li><div><%- locals.utilizator.username %></div>
+                            <ul>
+                                <li><a href="/profil">Profil</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
                 </ul>
             </nav>
             </header>

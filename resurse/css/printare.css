@@ -1,0 +1,145 @@
+
+@media print {
+
+    #galerie_statica, #galerie-animata, #fig1, #how-to, #link-top{
+        display: none;
+
+    }
+
+    #banner{
+
+        top: 0;
+        display: inline-block;
+        /* top:100%; */
+        /* width:20px;
+        height:20px; */
+        right:0;
+        overflow: visible;
+        width: 20% ;
+        position: absolute;
+        
+    }
+    #banner::after{
+
+        content:"Acesta este un proiect scolar!";
+        font-size:20px;
+        border:10px double black;
+        display: inline-block;
+
+    }
+
+    h1{
+
+        margin-top: 50%;
+        text-align:center;
+
+    }
+    nav {
+
+        page-break-after: always;
+      
+    }
+    #meniut-print{
+
+        display: block;
+
+        /* list-style-type: disc !important; */
+        
+    }
+    #meniut-print li{
+        height: auto;
+        overflow: visible;
+    }
+    #submeniut-print {
+        display:block;
+        opacity: 1;
+        transform: scaleY(1);
+
+       
+      }
+    div.rentals {
+        overflow: visible !important;
+    }
+    /* ul.meniu ul{
+        display: list-item;
+        overflow: visible;
+        list-style-type: disc !important;
+    } */
+
+    /* #grid-pag{
+        font-size: 10px;
+        box-sizing:border-box;
+        page-break-before:always;
+        background-color: white;
+        
+        display:block;
+        }
+        html, body {
+        width: 210mm;
+
+                overflow:visible !important;
+        } */
+    /* #grid-pag div:nth-child(5){
+        
+        page-break-before:always;
+    } */
+
+    
+    a{
+
+        text-decoration: none;
+        color: black;
+    }
+
+    #watermark{
+
+        display: inline-block;
+        position: fixed;/*apare pe toate paginile*/
+        bottom:0;
+        color:rgba(0,0,0,0.4);
+        right:0;
+        width: 60%;
+        height: 10%;
+
+    }
+    #watermark::after{
+            
+        opacity:0.3;
+        padding:5px;
+        display: block;
+        background: white;
+        border:2px solid black;
+        border-top-left-radius:10px;
+        border-bottom-left-radius:10px;
+        border-right:none; 
+        content:"Bora Dragos Ionut";
+
+    }
+
+    #end{
+
+        page-break-before: always;
+
+    }
+}
+
+
+@page {
+
+    size: A4 portrait;
+    margin-bottom:2cm;
+    margin-top:2cm;
+    counter-increment: page;
+        
+}
+@page:left{
+
+    margin-left:2cm;
+    margin-right:1cm;
+ 
+}
+@page:right{
+
+    margin-right:2cm;
+    margin-left:1cm;
+}

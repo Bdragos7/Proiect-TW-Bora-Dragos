@@ -52,7 +52,7 @@
 
  ul.meniu li div>a:hover{
     background-color :var(--culoare-meniu-selectat) ;
-    color: #94ffaf ;
+    color: var(--culoare-gradient) ;
  }
 ul.meniu li div>a:hover::after{
    width: 0px;
@@ -69,7 +69,7 @@ ul.meniu li div>a:hover::after{
 
  div.rentals:hover{
    background-color :var(--culoare-meniu-selectat) ;
-   color: #94ffaf;
+   color: var(--culoare-gradient);
  }
  #home{
    display: none;

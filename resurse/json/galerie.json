@@ -6,7 +6,7 @@
 			"text_descriere":"Avion A330",
 			"titlu":"A330",
 			"alt":"A330",
-			"luni":["martie","februarie","iunie","decembrie"]
+			"luni":["martie","februarie","iunie"]
 		},
 		{
 			"cale_fisier":"avion_ciudat.png",

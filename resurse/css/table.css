@@ -1,0 +1,66 @@
+
+table {
+    width: 100%;
+    display: flexbox;
+    border: 5px solid ;
+    border-style: inset;
+    text-align: center;
+}
+
+td, th {
+    padding: 5px;
+    
+}
+
+thead tr:nth-child(odd) th{
+    border: 2px solid #e1c0fc;
+
+ }
+tr:nth-child(even) td{
+    border: 2px solid #e1c0fc;
+}
+
+
+ tr:nth-child(odd) td{
+    border: 2px solid blue;
+}
+
+
+
+#div-reviste thead tr:nth-child(odd) th{
+    background:  #e1c0fc;
+
+ }
+ #div-reviste tr:nth-child(even) td{
+    background:  #e1c0fc;
+}
+
+
+#div-reviste tr:nth-child(odd) td{
+    background:  blue;
+}
+
+#pret-revista{
+    transition: outline 0.5s linear;
+}
+
+#pret-revista:hover{
+    background: red;
+    font-weight: 20px;
+}
+
+th, tr{
+    transition: outline 0.5s linear;
+    outline-width: 5px;
+    outline: hidden;
+    outline-color: rgb(0.7);
+}
+
+tbody tr:hover{
+    outline:solid;
+    
+    
+}
+thead tr:hover{
+    outline:solid;
+}

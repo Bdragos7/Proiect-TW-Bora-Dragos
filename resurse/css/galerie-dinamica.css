@@ -1,0 +1,66 @@
+.galerie {
+	width: 100%;
+	height:300px;
+	border:1px solid black;
+	position:relative;
+	overflow:hidden;
+
+  border:1px solid black;
+	margin-bottom:5rem;
+}
+.galerie figcaption {
+	position:fixed;
+	bottom:0;
+	background:rgba(255,255,255,0.7);
+	width:100%;
+	text-align:center;
+}
+.galerie figure {
+	position:relative;
+	width:400px;
+	height:300px;
+}
+
+.galerie img {
+    width: 100%;
+}
+
+
+#galerie_exemplu3 figure{	
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:0;
+	animation-name:gal_exemplu3;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+	animation-fill-mode:forwards;
+	animation-duration:9s;	
+	transform:scale(1,1);
+	transform-origin:0px center;
+}
+#galerie_exemplu3 figure:nth-of-type(3){
+	animation-delay:0s;
+}
+#galerie_exemplu3 figure:nth-of-type(2){
+	animation-delay:3s;
+}
+#galerie_exemplu3 figure:nth-of-type(1){
+	animation-delay:6s;
+}
+
+/* clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 87%, 95% 89%, 95% 15%, 0 15%, 0 0); */
+
+@keyframes gal_exemplu3 { 
+	0% {z-index:10;opacity:1; transform: scale(1, 0.0);} 
+	10% {transform: scale(1, 0.5);}
+	13%{opacity:1; /* transform: scale(1, 1); */} /* de  aici doresc sa descresc si opacitatea;*/
+	33.3332%{z-index:10; transform: scale(1, 1);}
+	33.3333%{opacity:0;z-index:10;}/* il ascund cat mai in spate sa nu vina peste imaginile care erau mai sus in html decat el*/
+	33.3334%{z-index:0;}
+	66.6665%{opacity:0;}	
+	66.6667%{opacity:0; transform: scale(1, 0);z-index:0;}	
+	66.67%{opacity:1;}
+	100%{opacity:1;z-index:0;}
+}
+

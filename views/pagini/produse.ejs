@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+
+        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+        <%- include("../fragmente/head") %>     
+        <title>Air Travel</title>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <label> Nume: <input type="text" id="inp-nume"></label>
+
+        <div> Durata Zbor:
+            <p><label>Scurtă (Durata zborului &lt; 2h)
+                <input id="i_rad1" class="inp-duration" name="gr_rad" value="0:2" type="radio"/>
+            </label></p>
+            <p><label>Medie (2 &le; Durata zborului &lt; 4)
+                <input id="i_rad2" class="inp-duration" name="gr_rad" value="2:4" type="radio"/>
+            </label>
+            <p><label>Lungă (4 &le; Durata zborului)
+                <input id="i_rad3" class="inp-duration" name="gr_rad" value="4:100" type="radio"/>
+            </label>
+            <p><label>Toate
+                <input id="i_rad4" class="inp-duration" checked name="gr_rad" value="toate" type="radio"/>
+            </label>
+        </div>
+
+        
+             
+        <div> Vacanta exotica:
+            <p><label>Da
+                <input id="inp-exotic" name="gr-exotic" value="true" type="checkbox" checked/>
+            </label></p>
+            <p><label>Nu
+                <input id="inp-exotic-toate" name="gr-exotic" value="false" type="checkbox" checked/>
+            </label></p>
+
+
+        </div>
+      
+
+        <label> Alegti cate bilete la oferta vreti sa fie diponibile: <input type="int" id="inp-bilete"></label>
+        <br>
+        <br><label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="500">(<span id="infoRange"></span>)</label>
+        <br>
+        <br><label>Select simplu:
+            <select id="inp-categorie">
+                <option id="sel-toate" selected value="toate" class="val-categorie">toate</option>
+                <% for (let opt of locals.optiuni) { %>
+                    <option value="<%- opt %>" class="val-categorie"><%- opt %> </option>
+                <% } %>
+            </select>
+        </label><br>
+        <br>
+        <label for="puncte turistice">Alegeti punctele turistice valabile pentru vacanta:</label>
+        <input list="puncte-turistice" id="inp-puncte-turistice" value="mancare buna">
+
+        <datalist id="puncte-turistice">
+            <option value="plaja">
+            <option value="inot">
+
+        </datalist>
+        <br>
+        <!-- textarea -->
+        <br>
+        <label for="w3review">Cauta in descriere ce vacanta ti se potriveste:</label>
+
+        <br><textarea id="inp-descriere" rows="4" cols="50" placeholder="Descriere..."></textarea>
+        <br>
+
+        <!-- select multiplu -->
+        <label for="mancare">Alege un meniu pe care ai dori sa-l gusti :</label>
+        <br>
+        <br><select name="menius" id="inp-menus" multiple>
+            <option value="toate" class="val-meniu" selected>Toate</option>
+            <option value="Meniu post" class="val-meniu">Meniu post</option>
+            <option value="Meniu carne" class="val-meniu">Meniu carne</option>
+            <option value="Meniu peste" class="val-meniu">Meniu peste</option>
+        </select>
+
+
+        <p>
+        <button id="filtrare">Filtreaza</button> 
+        <button id="resetare">Reseteaza</button><br/>
+        <button id="sortCrescNume">Sorteaza crescator dupa pret si durata zborului</button>
+        <button id="sortDescrescNume">Sorteaza descrescator dupa pret si durata zborului</button>
+        
+        </p>
+        
+        <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs" >
+                        <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <div class="info-prod">
+                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                            <p class="puncte-turistice">Puncte turistice: <span class="val-pct-turistice"><%- prod.puncte_turistice%></span></p>
+                            <p class="exotic">Exotic?: <span class="val-exotic"><%- prod.exotic%></span></p>
+                            <p class="durata">Durata zborului: <span class="val-durata"><%- prod.durata_zbor%></span></p>
+                            <p>Biletele ramase la oferta: <span class="val-bilete"><%- prod.bilete_la_oferta %> </span></p>
+                        </div>
+                        <p class="Descriere">Descriere:<span class="descriere"><%- prod.descriere%></span></p>
+                        <br><p class="tip-vacanta">Tip Vacanta:<span class="val-tip-vc"><%- prod.tip_vacanta%></span></p>
+                        <!-- ACORDEON -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Descriere
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <span class="descriere"><%- prod.descriere%></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Tip Vacanta
+                              </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <span class="val-tip-vc"><%- prod.tip_vacanta%></span>
+                              </div>
+                            </div>
+                          </div>
+
+                        <figure>
+                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                        </figure>
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                        </label>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+    <script>
+        let value_price = document.getElementById("inp-pret").value;
+        console.log(document.getElementById("inp-pret").value);
+        document.getElementById("infoRange").innerHTML = value_price;
+    </script>
+</html>

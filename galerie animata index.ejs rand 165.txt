@@ -1,0 +1,15 @@
+<div id="galerie-animata" class="galerie-a">
+                         <section id="sectiune-galerie-animata">
+                            <% for (let imag of locals.imagini) { 
+                                %>
+                                    <figure>
+                                         <picture>
+                                            <source srcset="<%- imag.cale_fisier_mediu %>" media="(max-width:1200px)" />
+                                            <img src="<%- imag.cale_fisier %>" alt="<%- imag.alt %>">
+                                        </picture>
+                                        <figcaption><%- imag.text_descriere %></figcaption>
+                                    </figure>
+                            <% }  %>
+                        </section>
+                    </div>
+                       

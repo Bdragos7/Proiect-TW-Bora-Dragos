@@ -1,0 +1,21 @@
+@media screen and (max-width:750px){
+    #grid-pagina {
+        display:block;
+    }
+  }
+
+@media screen and (max-width:1200px) and (min-width:750px){
+    
+    #grid-pagina{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "z-ceva z-ceva"
+                            "z-fig1 z-informatii-utile"
+                            "z-galerie-animata z-galerie-animata "
+                            "z-tabel z-tabel"
+                            " z-how-to z-how-to"
+                            "z-about-us z-about-us"
+                            "z-galerie_statica z-galerie_statica";
+        
+    }
+}

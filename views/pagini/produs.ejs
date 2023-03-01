@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+       
+        <%-include("../fragmente/head.ejs")%>
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+        <title>Air Travel</title>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Puncte turistice: <span class="puncte-turistice"><%- locals.prod.puncte_turistice %> </span></p>
+                    <p>Pret: <span class="val-pret"><%- locals.prod.pret %> </span></p>
+                    <p>Biletele ramase la oferta: <span class="val-bilete"><%- locals.prod.bilete_oferta %> </span></p>
+                    <p>Tipul vacantei: <span class="val-tip-vc"><%- locals.tip_vacanta%> </span></p>
+                    <p>Durata zborului: <span class="val-durata"><%- locals.prod.durata_zbor %> </span></p>
+                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                    <p>Exotic?: <span class="exotic"><%- locals.prod.exotic %> </span></p>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>
